@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background-image: repeating-linear-gradient(90deg, rgb(16, 16, 16) 0px, rgb(16, 16, 16) 35px,rgb(9, 9, 9) 35px, rgb(9, 9, 9) 70px,rgb(1, 1, 1) 70px, rgb(1, 1, 1) 105px,rgb(6, 6, 6) 105px, rgb(6, 6, 6) 140px,rgb(4, 4, 4) 140px, rgb(4, 4, 4) 175px,rgb(14, 14, 14) 175px, rgb(14, 14, 14) 210px,rgb(11, 11, 11) 210px, rgb(11, 11, 11) 245px,rgb(19, 19, 19) 245px, rgb(19, 19, 19) 280px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    color: antiquewhite;
+    margin: 2vh auto;
+    padding: 2vh;
+    box-shadow: 5px 2.5px 2.5px 2.5px red;
+    font-family: 'Metal Mania', cursive;
+}
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(4, 8rem); 
+    grid-gap: 2rem;
+    perspective: 800px;
+    
+}
+#memorica{
+    background-image: url(memorica.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25%;
+    width: 50%;
+    filter: drop-shadow(0 0 0.75rem crimson);
+}
+#music-icon {
+    background-image: url(hand.png);
+    background-position:center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+    filter: drop-shadow(0 0 0.15rem rgb(255, 255, 255));
+    cursor: pointer;
+    padding: 2.5vh ;
+    margin: 2.5vh ;
+}
+.card {
+   position: relative;
+   transform-style: preserve-3d;
+   transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+}
+
+.face,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.back {
+    background-color: #e5e5f7;
+opacity: 1;
+background-image: radial-gradient(circle at center center, #14152c, #e5e5f7), repeating-radial-gradient(circle at center center, #14152c, #14152c, 10px, transparent 20px, transparent 10px);
+background-blend-mode: multiply;
+    
+    backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+.face {
+    transform: rotateY(-180deg);
+}
+.audio-play {
+    box-shadow: 0 0 3px rgba(120, 220, 177, 0.233);
+    box-shadow: 0 0 5px rgba(251, 54, 54, 0.117);
+    border: solid rgba(220, 20, 60, 0.183) 1px;
+    border-radius: 50%;
+    transition: ease-in-out 3s;
+}
